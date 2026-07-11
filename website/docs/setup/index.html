@@ -32,8 +32,8 @@
       <p>
         Download <code>cinnasole.py</code> from the
         <a href="/website/download">Download page</a>. It's a single
-        self-contained file &mdash; no separate install step is required
-        to run it.
+        self-contained file &mdash; run it directly with
+        <code>python3</code>, no separate install step required.
       </p>
 
       <h2>Run it directly</h2>
@@ -44,27 +44,6 @@
         <li><code>python3 cinnasole.py</code> &mdash; opens this website in your browser.</li>
         <li><code>python3 cinnasole.py --start</code> &mdash; opens the interactive prompt.</li>
       </ul>
-
-      <h2>Install it as a command (optional)</h2>
-      <p>
-        If you'd rather type <code>cinnasole</code> from anywhere instead
-        of <code>python3 cinnasole.py</code>, an <code>install.sh</code>
-        script is available on the
-        <a href="https://github.com/opencinnamon/cinnasole">GitHub repo</a>.
-        It copies the file to <code>~/.local/bin/cinnasole</code> and
-        checks whether that folder is already on your <code>PATH</code>.
-      </p>
-      <p>
-        If it isn't, add this line to your <code>~/.bashrc</code> or
-        <code>~/.zshrc</code>, then restart your terminal:
-      </p>
-      <p><code>export PATH="$HOME/.local/bin:$PATH"</code></p>
-      <p>
-        Once installed this way, <code>cinnasole</code> and
-        <code>cinnasole --start</code> work identically to the
-        <code>python3 cinnasole.py</code> forms above &mdash; it's the
-        same file, just callable without the <code>python3</code> prefix.
-      </p>
 
       <h2>Optional dependencies</h2>
       <p>
