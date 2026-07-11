@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinnasole &mdash; Command examples</title>
+  <link rel="stylesheet" href="/website/style.css">
+</head>
+<body>
+<div id="page">
+  <header>
+    <img src="/images/frame1.png" alt="Cinnasole" class="logo" id="logo-img">
+    <h1>Cinnasole</h1>
+  </header>
+  <nav>
+    <a href="/website/download" class="site-button">Download</a>
+    <a href="/website/about" class="site-button">About</a>
+    <a href="/website/" class="site-button">Home</a>
+    <a href="https://github.com/opencinnamon/cinnasole" class="site-button">GitHub</a>
+  </nav>
+  <main>
+    <p class="lead">Command examples &mdash; <a href="/website/docs">&larr; back to docs</a></p>
+
+    <div class="about-box">
+      <p>
+        For the full list of prompt commands with one-line descriptions,
+        see the <a href="/website/about">About</a> page. This page walks
+        through a few commands in more depth, with real example input
+        and output.
+      </p>
+
+      <h2>crack &mdash; recovering a password</h2>
+      <p>
+        <code>crack</code> tries a built-in list of common passwords
+        against a zip or PDF file you've forgotten the password to. If
+        the password isn't in the default list, point it at a bigger
+        wordlist file with <code>--wordlist</code>:
+      </p>
+      <p>
+        <code>cinnasole&gt; crack myfile.zip</code><br>
+        <code>Trying 35 candidate passwords against 'myfile.zip'...</code><br>
+        <code>No password found among the candidates tried.</code><br>
+        <code>Try a larger wordlist with: crack &lt;file&gt; --wordlist &lt;path&gt;</code>
+      </p>
+      <p>
+        <code>cinnasole&gt; crack myfile.zip --wordlist bigger-list.txt</code><br>
+        <code>Loaded 3000 candidate passwords from 'bigger-list.txt'.</code><br>
+        <code>Trying 3000 candidate passwords against 'myfile.zip'...</code><br>
+        <code>Password found: correcthorsebatterystaple</code>
+      </p>
+      <p>
+        If the file turns out not to be password-protected at all,
+        <code>crack</code> says so directly rather than reporting a
+        false match:
+      </p>
+      <p>
+        <code>cinnasole&gt; crack myfile.zip</code><br>
+        <code>Trying 35 candidate passwords against 'myfile.zip'...</code><br>
+        <code>This zip file doesn't appear to be password-protected.</code>
+      </p>
+
+      <h2>subnet &mdash; reading the output</h2>
+      <p>
+        Give <code>subnet</code> a CIDR block and it breaks down the
+        network:
+      </p>
+      <p>
+        <code>cinnasole&gt; subnet 192.168.1.0/24</code><br>
+        <code>Network address:    192.168.1.0</code><br>
+        <code>Broadcast address:  192.168.1.255</code><br>
+        <code>Netmask:            255.255.255.0</code><br>
+        <code>Total addresses:    256</code><br>
+        <code>Usable host range:  192.168.1.1 - 192.168.1.254</code><br>
+        <code>Usable hosts:       254</code>
+      </p>
+      <p>
+        Total addresses includes the network and broadcast addresses;
+        usable hosts is the number actually assignable to a device.
+        Small blocks like a <code>/30</code> or <code>/31</code> still
+        work &mdash; the usable range just shrinks accordingly.
+      </p>
+
+      <h2>sslcheck &mdash; reading the expiry line</h2>
+      <p>
+        <code>sslcheck</code> connects to a domain, reads its live TLS
+        certificate, and reports how long it's valid for:
+      </p>
+      <p>
+        <code>cinnasole&gt; sslcheck example.com</code><br>
+        <code>Domain:      example.com</code><br>
+        <code>Subject CN:  example.com</code><br>
+        <code>Issuer:      Example CA</code><br>
+        <code>Valid from:  Jan 1 00:00:00 2026 GMT</code><br>
+        <code>Valid until: Apr 1 00:00:00 2026 GMT</code><br>
+        <code>Status:      Valid (62 days left)</code>
+      </p>
+      <p>
+        If fewer than 14 days remain, the status line calls that out
+        specifically so it's easy to notice at a glance rather than
+        buried in a date you'd have to do the math on yourself.
+      </p>
+
+      <h2>pgen &mdash; generating a password</h2>
+      <p>
+        <code>pgen</code> takes an optional length (default 16) and
+        always includes at least one lowercase letter, uppercase letter,
+        digit, and symbol &mdash; never leaves that to chance:
+      </p>
+      <p>
+        <code>cinnasole&gt; pgen</code><br>
+        <code>xR4$mK9pL!qZ2vNw</code>
+      </p>
+      <p>
+        <code>cinnasole&gt; pgen 24 --no-symbols</code><br>
+        <code>aB3dE7fG1hJ5kL9mN2pQ6rS8tU</code>
+      </p>
+
+      <h2>nmap and the local-network boundary</h2>
+      <p>
+        <code>nmap</code> only scans localhost and private network
+        ranges. A public address is refused outright, regardless of what
+        it resolves from:
+      </p>
+      <p>
+        <code>cinnasole&gt; nmap 8.8.8.8</code><br>
+        <code>Refused: '8.8.8.8' is not localhost or a private network address.</code>
+      </p>
+      <p>
+        <code>cinnasole&gt; nmap 192.168.1.1</code><br>
+        <code>Running nmap against 192.168.1.1...</code><br>
+        <code>(real scan output for your own router/network)</code>
+      </p>
+    </div>
+  </main>
+  <footer>Cinnasole &mdash; built for Kitty &amp; Konsole</footer>
+</div>
+<script>
+  (function () {
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var logoSrc = "/images/frame1.png";
+    if (month === 6 && day >= 1 && day <= 29) {
+      logoSrc = "/images/framepride.png";
+    } else if (month === 7 && day === 4) {
+      logoSrc = "/images/frameamerica.png";
+    } else if (month === 7 && day === 11) {
+      logoSrc = "/images/framebirthday.png";
+    }
+    document.getElementById("logo-img").src = logoSrc;
+  })();
+</script>
+</body>
+</html>
