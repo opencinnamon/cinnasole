@@ -29,7 +29,7 @@
       <p>
         Cinnasole is a self-contained command launcher for your Linux terminal
         (Kitty, Konsole, and other terminal emulators). Run
-        <code>cinnasole --start</code> and you get a
+        <code>python3 cinnasole --start</code> and you get a
         <code>cinnasole&gt;</code> prompt with a set of built-in utility
         commands &mdash; hashing, network lookups, password tools, and more.
       </p>
@@ -42,7 +42,7 @@
       <ul>
         <li><code>whois</code> and <code>nmap</code> use the system <code>whois</code> / <code>nmap</code> utilities if installed (<code>sudo pacman -S whois nmap</code> on Arch) &mdash; both fall back to a built-in alternative if not.</li>
         <li><code>crack</code> can recover passwords on PDF files if the <code>pikepdf</code> Python package is installed (<code>pip install pikepdf</code>). Zip file support needs nothing extra.</li>
-        <li><code>--edit</code> installs <code>nano</code> automatically if it isn't already present.</li>
+        <li><code>python3 cinnasole.py --edit</code> installs <code>nano</code> automatically if it isn't already present.</li>
       </ul>
 
       <h2>Getting started</h2>
@@ -51,8 +51,8 @@
         your regular shell:
       </p>
       <ul>
-        <li><code>cinnasole</code> (no arguments) &mdash; opens the Cinnasole website in your default browser.</li>
-        <li><code>cinnasole --start</code> &mdash; launches the interactive <code>cinnasole&gt;</code> prompt shown below.</li>
+        <li><code>python3 cinnasole</code> (no arguments) &mdash; opens the Cinnasole website in your default browser.</li>
+        <li><code>python3 cinnasole --start</code> &mdash; launches the interactive <code>cinnasole&gt;</code> prompt shown below.</li>
       </ul>
 
       <h2>Shell commands</h2>
@@ -61,19 +61,19 @@
         prompt starts:
       </p>
       <ul>
-        <li><code>cinnasole --start</code> &mdash; Launch the interactive <code>cinnasole&gt;</code> prompt.</li>
-        <li><code>cinnasole --version</code> &mdash; Check the latest release on GitHub.</li>
-        <li><code>cinnasole --github</code> / <code>cinnasole --gh</code> &mdash; Open the GitHub repo in your browser.</li>
-        <li><code>cinnasole --type</code> &mdash; Show what Cinnasole is built on.</li>
-        <li><code>cinnasole --wipe</code> &mdash; Permanently delete Cinnasole from your machine, after a confirmation prompt.</li>
-        <li><code>cinnasole --edit</code> &mdash; Open Cinnasole's own source file in <code>nano</code> to make changes. Run <code>cinnasole --restart</code> afterward for edits to take effect.</li>
-        <li><code>cinnasole --restart</code> &mdash; Restart Cinnasole in place, picking up any changes made via <code>--edit</code>.</li>
+        <li><code>python3 cinnasole --start</code> &mdash; Launch the interactive <code>cinnasole&gt;</code> prompt.</li>
+        <li><code>python3 cinnasole --version</code> &mdash; Check the latest release on GitHub.</li>
+        <li><code>python3 cinnasole --github</code> / <code>cinnasole --gh</code> &mdash; Open the GitHub repo in your browser.</li>
+        <li><code>python3 cinnasole --type</code> &mdash; Show what Cinnasole is built on.</li>
+        <li><code>python3 cinnasole --wipe</code> &mdash; Permanently delete Cinnasole from your machine, after a confirmation prompt.</li>
+        <li><code>python3 cinnasole --edit</code> &mdash; Open Cinnasole's own source file in <code>nano</code> to make changes. Run <code>cinnasole --restart</code> afterward for edits to take effect.</li>
+        <li><code>python3 cinnasole --restart</code> &mdash; Restart Cinnasole in place, picking up any changes made via <code>--edit</code>.</li>
       </ul>
 
       <h2>Prompt commands</h2>
       <p>
         These run inside the interactive <code>cinnasole&gt;</code> prompt,
-        after <code>cinnasole --start</code>:
+        after <code>python3 cinnasole --start</code>:
       </p>
       <ul>
         <li><code>help</code> &mdash; Show this list of commands.</li>
