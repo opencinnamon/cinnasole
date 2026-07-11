@@ -62,7 +62,7 @@ You are welcome to create your own Windows port, but unofficial ports are not su
 
 To install Cinnasole on your Linux computer, visit:
 
-https://console.mtgp.cc/download
+https://console.mtgp.cc/website/download
 
 Download the latest version of Cinnasole, then follow the steps below.
 
