@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinnasole — About</title>
+  <link rel="stylesheet" href="/website/style.css">
+</head>
+<body>
+
+  <header>
+    <img src="/images/frame1.png" alt="Cinnasole" class="logo">
+    <h1>Cinnasole</h1>
+  </header>
+
+  <nav>
+    <a href="/website/download" class="site-button">Download</a>
+    <a href="/website/about" class="site-button">About</a>
+  </nav>
+
+  <main>
+    <div class="about-box">
+
+      <h2>What is Cinnasole?</h2>
+      <p>
+        Cinnasole is a self-contained command launcher for your Linux terminal
+        (Kitty, Konsole, and other terminal emulators). Run
+        <code>python3 cinnasole.py</code> and you get a
+        <code>cinnasole&gt;</code> prompt with a set of built-in utility
+        commands &mdash; hashing, network lookups, password tools, and more.
+      </p>
+
+      <h2>Requirements</h2>
+      <p>
+        Python 3.11 or newer. Most commands use only the Python standard
+        library. A couple of optional features need extra tools:
+      </p>
+      <ul>
+        <li><code>whois</code> and <code>nmap</code> use the system <code>whois</code> / <code>nmap</code> utilities if installed (<code>sudo pacman -S whois nmap</code> on Arch) &mdash; both fall back to a built-in alternative if not.</li>
+        <li><code>crack</code> can recover passwords on PDF files if the <code>pikepdf</code> Python package is installed (<code>pip install pikepdf</code>). Zip file support needs nothing extra.</li>
+      </ul>
+
+      <h2>Commands</h2>
+      <ul>
+        <li><code>help</code> &mdash; Show this list of commands.</li>
+        <li><code>hash</code> &mdash; Compute MD5/SHA256 of a file. Usage: <code>hash &lt;file&gt;</code></li>
+        <li><code>whois</code> &mdash; Public domain registration lookup. Usage: <code>whois &lt;domain&gt;</code></li>
+        <li><code>ports</code> &mdash; List open common ports on this machine.</li>
+        <li><code>nmap</code> &mdash; Scan localhost/private network. Usage: <code>nmap &lt;target&gt;</code></li>
+        <li><code>myip</code> &mdash; Show this machine's public IP address.</li>
+        <li><code>dns</code> &mdash; Resolve a domain to its IP(s). Usage: <code>dns &lt;domain&gt;</code></li>
+        <li><code>b64</code> &mdash; Base64 encode/decode. Usage: <code>b64 encode|decode &lt;text&gt;</code></li>
+        <li><code>pwcheck</code> &mdash; Check password strength, offline. Usage: <code>pwcheck &lt;password&gt;</code></li>
+        <li><code>sysinfo</code> &mdash; Show OS, kernel, CPU, memory info.</li>
+        <li><code>crack</code> &mdash; Recover a password on your own zip/PDF. Usage: <code>crack &lt;file&gt; [--wordlist &lt;file&gt;]</code></li>
+        <li><code>exit</code> &mdash; Exit Cinnasole.</li>
+      </ul>
+
+      <h2>A note on <code>nmap</code> and <code>crack</code></h2>
+      <p>
+        <code>nmap</code> only scans localhost and private network ranges
+        (<code>127.0.0.1</code>, <code>192.168.x.x</code>, <code>10.x.x.x</code>,
+        <code>172.16&ndash;31.x.x</code>) &mdash; it will refuse to scan public
+        addresses. <code>crack</code> is meant for recovering the password
+        on a zip or PDF file you created yourself and forgot the password
+        to, not for opening files that belong to someone else.
+      </p>
+
+    </div>
+  </main>
+
+  <footer>Cinnasole &mdash; built for Kitty &amp; Konsole</footer>
+
+</body>
+</html>
