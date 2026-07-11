@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinnasole — Download</title>
+  <link rel="stylesheet" href="/website/style.css">
+</head>
+<body>
+
+  <header>
+    <img src="/images/frame1.png" alt="Cinnasole" class="logo">
+    <h1>Cinnasole</h1>
+  </header>
+
+  <nav>
+    <a href="/website/download" class="site-button">Download</a>
+    <a href="/website/about" class="site-button">About</a>
+  </nav>
+
+  <main>
+    <p class="lead">Click the white button to download Cinnasole for Linux.</p>
+
+    <button type="button" class="site-button primary" id="download-btn">Download Cinnasole</button>
+
+    <p id="download-confirmation">Great, now check the GitHub to see what to do next!</p>
+  </main>
+
+  <footer>Cinnasole &mdash; built for Kitty &amp; Konsole</footer>
+
+  <script>
+    document.getElementById('download-btn').addEventListener('click', function () {
+      var link = document.createElement('a');
+      link.href = 'https://cdn.mtgoals.cc/files/cinnasole.py';
+      link.download = 'cinnasole.py';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      document.getElementById('download-confirmation').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
