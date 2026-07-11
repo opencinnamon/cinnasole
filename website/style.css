@@ -10,121 +10,144 @@ html, body {
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
-  color: #f0e6f0;
-  background: linear-gradient(to top, #1a0b2e 0%, #2d0f3d 40%, #4a1442 70%, #5c1a4a 100%);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-size: 13px;
+  color: #1a1a1a;
+  background-color: #4a1442;
+  background-image: linear-gradient(
+    to top,
+    #2d0f3d 0%,
+    #2d0f3d 25%,
+    #4a1442 25%,
+    #4a1442 55%,
+    #6b1f5c 55%,
+    #6b1f5c 80%,
+    #8a2a72 80%,
+    #8a2a72 100%
+  );
+  min-height: 100%;
+}
+
+#page {
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
 header {
-  margin-top: 64px;
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 16px;
   text-align: center;
 }
 
 header img.logo {
-  max-width: 96px;
+  max-width: 80px;
   height: auto;
-  margin-bottom: 14px;
-  image-rendering: pixelated;
+  vertical-align: middle;
 }
 
 header h1 {
-  font-size: 2.4rem;
-  letter-spacing: 2px;
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 22px;
   font-weight: bold;
-  text-shadow: 2px 2px 0 #000;
   color: #ffffff;
+  vertical-align: middle;
 }
 
 nav {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 48px;
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 6px 0;
+  background-color: #efefef;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 
 .site-button {
-  display: inline-block;
-  font-family: inherit;
-  font-size: 1rem;
+  display: inline;
+  font-size: 13px;
   font-weight: bold;
-  color: #f0e6f0;
-  background-color: #3a1240;
-  border: 2px solid #f0e6f0;
-  padding: 10px 28px;
-  text-decoration: none;
+  color: #0000ee;
+  background: none;
+  border: none;
+  padding: 0 10px;
+  text-decoration: underline;
   cursor: pointer;
-  letter-spacing: 1px;
+}
+
+.site-button:visited {
+  color: #551a8b;
 }
 
 .site-button:hover {
-  background-color: #f0e6f0;
-  color: #2d0f3d;
-}
-
-.site-button:active {
-  background-color: #ffffff;
-  color: #1a0b2e;
+  color: #ff0000;
 }
 
 .site-button.primary {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
   background-color: #ffffff;
-  color: #2d0f3d;
-  border: 2px solid #ffffff;
-  font-size: 1.1rem;
-  padding: 14px 36px;
+  border: 1px solid #000000;
+  padding: 4px 14px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.site-button.primary:visited {
+  color: #000000;
 }
 
 .site-button.primary:hover {
-  background-color: #f0e6f0;
-  color: #1a0b2e;
+  background-color: #dddddd;
+}
+
+.site-button.primary:active {
+  background-color: #cccccc;
 }
 
 main {
   width: 100%;
-  max-width: 640px;
-  padding: 0 24px 64px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 0 20px 40px;
   text-align: center;
 }
 
 main p.lead {
-  font-size: 1.15rem;
-  margin-bottom: 28px;
-  line-height: 1.5;
+  font-size: 13px;
+  margin-bottom: 14px;
+  line-height: 1.4;
+  color: #1a1a1a;
+  background-color: #efefef;
+  border: 1px solid #000000;
+  padding: 8px;
+  display: inline-block;
 }
 
 #download-confirmation {
   display: none;
-  color: #4dff4d;
-  font-size: 1.2rem;
+  color: #008000;
+  font-size: 14px;
   font-weight: bold;
-  margin-top: 24px;
-  text-shadow: 1px 1px 0 #000;
+  margin-top: 14px;
 }
 
 .about-box {
   width: 100%;
   text-align: left;
-  border: 2px solid #f0e6f0;
-  background-color: rgba(0, 0, 0, 0.25);
-  padding: 24px;
-  line-height: 1.6;
+  border: 1px solid #000000;
+  background-color: #efefef;
+  color: #1a1a1a;
+  padding: 14px 18px;
+  line-height: 1.5;
 }
 
 .about-box h2 {
-  font-size: 1.2rem;
-  margin-top: 20px;
-  margin-bottom: 8px;
-  color: #ffffff;
+  font-size: 14px;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  color: #000000;
+  border-bottom: 1px solid #000000;
 }
 
 .about-box h2:first-child {
@@ -132,20 +155,21 @@ main p.lead {
 }
 
 .about-box ul {
-  margin-left: 20px;
-  margin-bottom: 8px;
+  margin-left: 18px;
+  margin-bottom: 6px;
 }
 
 .about-box code {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 1px 6px;
-  font-family: inherit;
+  background-color: #dddddd;
+  border: 1px solid #bbbbbb;
+  padding: 0 3px;
+  font-family: monospace;
+  font-size: 12px;
 }
 
 footer {
-  margin-top: auto;
-  padding: 20px;
-  font-size: 0.8rem;
-  color: #b89ab0;
   text-align: center;
+  padding: 16px;
+  font-size: 11px;
+  color: #d8c0d0;
 }
