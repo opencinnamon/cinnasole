@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinnasole &mdash; Docs</title>
+  <link rel="stylesheet" href="/website/style.css">
+</head>
+<body>
+<div id="page">
+  <header>
+    <img src="/images/frame1.png" alt="Cinnasole" class="logo" id="logo-img">
+    <h1>Cinnasole</h1>
+  </header>
+  <nav>
+    <a href="/website/download" class="site-button">Download</a>
+    <a href="/website/about" class="site-button">About</a>
+    <a href="/website/" class="site-button">Home</a>
+    <a href="https://github.com/opencinnamon/cinnasole" class="site-button">GitHub</a>
+  </nav>
+  <main>
+    <p class="lead">Documentation for Cinnasole.</p>
+
+    <div class="about-box">
+      <h2>Start here</h2>
+      <p>
+        This section covers installing Cinnasole and using it in practice
+        &mdash; walkthroughs and worked examples, rather than a flat
+        reference list. For a quick overview of what Cinnasole is and a
+        full command list, see the <a href="/website/about">About</a> page
+        instead.
+      </p>
+
+      <h2>Setup</h2>
+      <p>
+        Getting Cinnasole installed and running for the first time,
+        including the optional dependencies a few commands rely on.
+      </p>
+      <p><a href="/website/docs/setup">&rarr; Setup guide</a></p>
+
+      <h2>Commands</h2>
+      <p>
+        Worked examples for the interactive <code>cinnasole&gt;</code>
+        prompt commands &mdash; real input and output, particularly for the
+        commands with more moving parts.
+      </p>
+      <p><a href="/website/docs/commands">&rarr; Command examples</a></p>
+
+      <h2>Flags</h2>
+      <p>
+        A walkthrough of the shell-level flags &mdash; <code>--edit</code>,
+        <code>--wipe</code>, <code>--restart</code>, and the rest &mdash;
+        including what they actually do to your machine before you run them.
+      </p>
+      <p><a href="/website/docs/flags">&rarr; Flags walkthrough</a></p>
+    </div>
+  </main>
+  <footer>Cinnasole &mdash; built for Kitty &amp; Konsole</footer>
+</div>
+<script>
+  (function () {
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var logoSrc = "/images/frame1.png";
+    if (month === 6 && day >= 1 && day <= 29) {
+      logoSrc = "/images/framepride.png";
+    } else if (month === 7 && day === 4) {
+      logoSrc = "/images/frameamerica.png";
+    } else if (month === 7 && day === 11) {
+      logoSrc = "/images/framebirthday.png";
+    }
+    document.getElementById("logo-img").src = logoSrc;
+  })();
+</script>
+</body>
+</html>
