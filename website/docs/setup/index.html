@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinnasole &mdash; Setup</title>
+  <link rel="stylesheet" href="/website/style.css">
+</head>
+<body>
+<div id="page">
+  <header>
+    <img src="/images/frame1.png" alt="Cinnasole" class="logo" id="logo-img">
+    <h1>Cinnasole</h1>
+  </header>
+  <nav>
+    <a href="/website/download" class="site-button">Download</a>
+    <a href="/website/about" class="site-button">About</a>
+    <a href="/website/" class="site-button">Home</a>
+    <a href="https://github.com/opencinnamon/cinnasole" class="site-button">GitHub</a>
+  </nav>
+  <main>
+    <p class="lead">Setup guide &mdash; <a href="/website/docs">&larr; back to docs</a></p>
+
+    <div class="about-box">
+      <h2>Requirements</h2>
+      <p>
+        Python 3.11 or newer, and Linux. Cinnasole checks for Linux on
+        every launch and will refuse to run anywhere else.
+      </p>
+
+      <h2>Get the file</h2>
+      <p>
+        Download <code>cinnasole.py</code> from the
+        <a href="/website/download">Download page</a>. It's a single
+        self-contained file &mdash; no separate install step is required
+        to run it.
+      </p>
+
+      <h2>Run it directly</h2>
+      <p>
+        From the folder you downloaded it to:
+      </p>
+      <ul>
+        <li><code>python3 cinnasole.py</code> &mdash; opens this website in your browser.</li>
+        <li><code>python3 cinnasole.py --start</code> &mdash; opens the interactive prompt.</li>
+      </ul>
+
+      <h2>Install it as a command (optional)</h2>
+      <p>
+        If you'd rather type <code>cinnasole</code> from anywhere instead
+        of <code>python3 cinnasole.py</code>, an <code>install.sh</code>
+        script is available on the
+        <a href="https://github.com/opencinnamon/cinnasole">GitHub repo</a>.
+        It copies the file to <code>~/.local/bin/cinnasole</code> and
+        checks whether that folder is already on your <code>PATH</code>.
+      </p>
+      <p>
+        If it isn't, add this line to your <code>~/.bashrc</code> or
+        <code>~/.zshrc</code>, then restart your terminal:
+      </p>
+      <p><code>export PATH="$HOME/.local/bin:$PATH"</code></p>
+      <p>
+        Once installed this way, <code>cinnasole</code> and
+        <code>cinnasole --start</code> work identically to the
+        <code>python3 cinnasole.py</code> forms above &mdash; it's the
+        same file, just callable without the <code>python3</code> prefix.
+      </p>
+
+      <h2>Optional dependencies</h2>
+      <p>
+        Cinnasole works out of the box with just the Python standard
+        library. A handful of commands get better with a couple of
+        extras installed, and fall back gracefully if they're missing:
+      </p>
+      <ul>
+        <li>
+          <code>whois</code> and <code>nmap</code> use the system
+          <code>whois</code> / <code>nmap</code> utilities if present
+          (<code>sudo pacman -S whois nmap</code> on Arch). Without them,
+          both commands fall back to a simpler built-in check instead of
+          failing outright.
+        </li>
+        <li>
+          <code>crack</code> can recover passwords on PDF files if the
+          <code>pikepdf</code> Python package is installed
+          (<code>pip install pikepdf</code>). Zip file support needs
+          nothing extra &mdash; it's built into Python already.
+        </li>
+        <li>
+          <code>--edit</code> needs <code>nano</code>, and will offer to
+          install it via <code>pacman</code> automatically if it isn't
+          already on your system.
+        </li>
+      </ul>
+      <p>
+        None of these are required to use Cinnasole &mdash; every command
+        tells you plainly what's missing and how to get it, if and when
+        you actually run into that gap.
+      </p>
+
+      <h2>Next</h2>
+      <p>
+        Once you're up and running, see
+        <a href="/website/docs/commands">command examples</a> for the
+        interactive prompt, or
+        <a href="/website/docs/flags">the flags walkthrough</a> for
+        everything that runs before the prompt starts.
+      </p>
+    </div>
+  </main>
+  <footer>Cinnasole &mdash; built for Kitty &amp; Konsole</footer>
+</div>
+<script>
+  (function () {
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var logoSrc = "/images/frame1.png";
+    if (month === 6 && day >= 1 && day <= 29) {
+      logoSrc = "/images/framepride.png";
+    } else if (month === 7 && day === 4) {
+      logoSrc = "/images/frameamerica.png";
+    } else if (month === 7 && day === 11) {
+      logoSrc = "/images/framebirthday.png";
+    }
+    document.getElementById("logo-img").src = logoSrc;
+  })();
+</script>
+</body>
+</html>
