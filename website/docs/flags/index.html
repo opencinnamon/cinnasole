@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinnasole &mdash; Flags</title>
+  <link rel="stylesheet" href="/website/style.css">
+</head>
+<body>
+<div id="page">
+  <header>
+    <img src="/images/frame1.png" alt="Cinnasole" class="logo" id="logo-img">
+    <h1>Cinnasole</h1>
+  </header>
+  <nav>
+    <a href="/website/download" class="site-button">Download</a>
+    <a href="/website/about" class="site-button">About</a>
+    <a href="/website/" class="site-button">Home</a>
+    <a href="https://github.com/opencinnamon/cinnasole" class="site-button">GitHub</a>
+  </nav>
+  <main>
+    <p class="lead">Flags walkthrough &mdash; <a href="/website/docs">&larr; back to docs</a></p>
+
+    <div class="about-box">
+      <p>
+        Flags run directly from your shell, before the interactive
+        prompt starts &mdash; <code>cinnasole --start</code>, not a
+        command typed after launching. For the full list with one-line
+        descriptions, see the <a href="/website/about">About</a> page.
+        This page covers the ones worth understanding before you use
+        them.
+      </p>
+
+      <h2>--start</h2>
+      <p>
+        Opens the interactive <code>cinnasole&gt;</code> prompt. This is
+        the one you'll use the most &mdash; everything else on this page
+        is a one-off action, not something you run every session.
+      </p>
+      <p>
+        Worth knowing: plain <code>cinnasole</code> with no flag at all
+        does <em>not</em> open the prompt &mdash; it opens this website
+        in your browser instead. You need <code>--start</code>
+        specifically to reach the prompt.
+      </p>
+
+      <h2>--edit and --restart, together</h2>
+      <p>
+        <code>--edit</code> opens Cinnasole's own source file in
+        <code>nano</code>, so you can make changes directly. It's a real
+        warning prompt, not a formality &mdash; editing the source can
+        genuinely break commands if something goes wrong, and Cinnasole
+        says so before proceeding:
+      </p>
+      <p>
+        <code>cinnasole --edit</code><br>
+        <code>===================</code><br>
+        <code>ARE YOU SURE?</code><br>
+        <code>===================</code><br>
+        <code>Running cinnasole --edit gives you access to the code...</code><br>
+        <code>Are you sure? [Y/N]</code>
+      </p>
+      <p>
+        Answer <code>Y</code> and nano opens on the real file. If nano
+        isn't installed, Cinnasole offers to install it first rather than
+        just failing. Make your changes, save, and exit nano as normal.
+      </p>
+      <p>
+        Your edits don't take effect in a session that's already
+        running &mdash; that's what <code>--restart</code> is for:
+      </p>
+      <p>
+        <code>cinnasole --restart</code>
+      </p>
+      <p>
+        This re-runs Cinnasole in place, in the same terminal window,
+        picking up whatever you just changed. It's not closing and
+        reopening your terminal emulator &mdash; just restarting the
+        Cinnasole process itself, so your edits are live immediately.
+      </p>
+
+      <h2>--wipe</h2>
+      <p>
+        Deletes Cinnasole's own file from your machine, for real, after
+        one confirmation:
+      </p>
+      <p>
+        <code>cinnasole --wipe</code><br>
+        <code>==================</code><br>
+        <code>CINNASOLE --WIPE</code><br>
+        <code>==================</code><br>
+        <code>This will permanently delete: /path/to/cinnasole.py</code><br>
+        <code>Are you sure you want to do this? [Y/N]</code>
+      </p>
+      <p>
+        Answering <code>Y</code> deletes the file and confirms it did.
+        There's no staged uninstall process beyond that &mdash; it
+        removes the one file and tells you plainly that it's gone.
+        Answering <code>N</code> (or anything other than an explicit
+        yes) aborts and leaves the file untouched.
+      </p>
+
+      <h2>--version, --github / --gh, --type</h2>
+      <p>
+        These three are read-only &mdash; none of them change anything
+        on your machine.
+      </p>
+      <ul>
+        <li>
+          <code>--version</code> checks the latest release on GitHub and
+          shows it alongside the version you're currently running, so
+          you can tell at a glance if you're behind.
+        </li>
+        <li>
+          <code>--github</code> (or the shorter <code>--gh</code>) opens
+          the GitHub repo in your default browser.
+        </li>
+        <li>
+          <code>--type</code> prints what Cinnasole is built on.
+        </li>
+      </ul>
+    </div>
+  </main>
+  <footer>Cinnasole &mdash; built for Kitty &amp; Konsole</footer>
+</div>
+<script>
+  (function () {
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var logoSrc = "/images/frame1.png";
+    if (month === 6 && day >= 1 && day <= 29) {
+      logoSrc = "/images/framepride.png";
+    } else if (month === 7 && day === 4) {
+      logoSrc = "/images/frameamerica.png";
+    } else if (month === 7 && day === 11) {
+      logoSrc = "/images/framebirthday.png";
+    }
+    document.getElementById("logo-img").src = logoSrc;
+  })();
+</script>
+</body>
+</html>
