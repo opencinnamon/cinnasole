@@ -77,7 +77,7 @@ Replace `/path/to/cinnasole` with the actual location of your Cinnasole folder.
 ## 2. Run Cinnasole:
 
 ```bash
-python3 cinnasole.py
+python3 cinnasole.py --start
 ```
 
 If Python is not installed, follow the Python installation guide:
