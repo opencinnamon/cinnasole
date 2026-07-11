@@ -11,89 +11,77 @@ html, body {
 body {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;
-  color: #1a1a1a;
-  background-color: #32102f;
+  color: #222222;
+  background-color: #2b0d2f;
   min-height: 100%;
 }
 
 #page {
-  width: 700px;
+  width: 720px;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 25px;
 }
 
 header {
-  margin-top: 20px;
-  margin-bottom: 16px;
   text-align: center;
+  padding: 18px 0;
+  margin-bottom: 15px;
+  background-color: #4b174d;
+  border: 1px solid #18071a;
 }
 
 header img.logo {
-  max-width: 80px;
+  max-width: 85px;
   height: auto;
   vertical-align: middle;
 }
 
 header h1 {
   display: inline-block;
-  margin-left: 8px;
-  font-size: 24px;
+  margin-left: 10px;
+  font-size: 26px;
   font-weight: bold;
   color: #ffffff;
   vertical-align: middle;
+  letter-spacing: 1px;
 }
 
 nav {
   text-align: center;
   margin-bottom: 18px;
   padding: 8px 0;
-  background-color: #eeeeee;
-  border: 1px solid #000000;
+  background-color: #f4f4f4;
+  border: 1px solid #111111;
 }
 
 .site-button {
-  display: inline;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;
   font-weight: bold;
-  color: #0000ee;
+  color: #0000cc;
   background: none;
   border: none;
-  padding: 0 12px;
+  padding: 0 14px;
   text-decoration: underline;
   cursor: pointer;
 }
 
-.site-button:visited {
-  color: #551a8b;
-}
-
 .site-button:hover {
-  color: #cc0000;
+  color: #990000;
 }
 
 .site-button.primary {
   display: inline-block;
-  font-size: 13px;
-  font-weight: bold;
+  margin-top: 12px;
+  padding: 6px 18px;
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #000000;
-  padding: 5px 16px;
   text-decoration: none;
-  margin-top: 10px;
-}
-
-.site-button.primary:visited {
-  color: #000000;
 }
 
 .site-button.primary:hover {
-  background-color: #dddddd;
-}
-
-.site-button.primary:active {
-  background-color: #cccccc;
+  background-color: #e5e5e5;
 }
 
 main {
@@ -103,14 +91,52 @@ main {
 }
 
 main p.lead {
-  font-size: 13px;
-  margin-bottom: 14px;
+  width: 90%;
+  font-size: 14px;
   line-height: 1.5;
-  color: #1a1a1a;
-  background-color: #eeeeee;
-  border: 1px solid #000000;
-  padding: 10px;
-  display: inline-block;
+  margin-bottom: 18px;
+  padding: 12px;
+  background-color: #f6f6f6;
+  border: 1px solid #111111;
+}
+
+.about-box {
+  width: 100%;
+  text-align: left;
+  background-color: #f7f7f7;
+  border: 1px solid #111111;
+  padding: 18px 22px;
+  line-height: 1.6;
+}
+
+.about-box h2 {
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  padding-bottom: 3px;
+  color: #3b123d;
+  border-bottom: 1px solid #777777;
+}
+
+.about-box h2:first-child {
+  margin-top: 0;
+}
+
+.about-box ul {
+  margin-left: 22px;
+  margin-bottom: 10px;
+}
+
+.about-box li {
+  margin-bottom: 3px;
+}
+
+.about-box code {
+  background-color: #dddddd;
+  border: 1px solid #999999;
+  padding: 1px 4px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
 }
 
 #download-confirmation {
@@ -121,44 +147,9 @@ main p.lead {
   margin-top: 14px;
 }
 
-.about-box {
-  width: 100%;
-  text-align: left;
-  border: 1px solid #000000;
-  background-color: #eeeeee;
-  color: #1a1a1a;
-  padding: 16px 20px;
-  line-height: 1.6;
-}
-
-.about-box h2 {
-  font-size: 15px;
-  margin-top: 14px;
-  margin-bottom: 5px;
-  color: #000000;
-  border-bottom: 1px solid #777777;
-}
-
-.about-box h2:first-child {
-  margin-top: 0;
-}
-
-.about-box ul {
-  margin-left: 20px;
-  margin-bottom: 8px;
-}
-
-.about-box code {
-  background-color: #dddddd;
-  border: 1px solid #aaaaaa;
-  padding: 0 4px;
-  font-family: "Courier New", monospace;
-  font-size: 12px;
-}
-
 footer {
   text-align: center;
-  padding: 16px;
+  padding: 18px;
   font-size: 11px;
-  color: #cbb4c8;
+  color: #d8bfd5;
 }
