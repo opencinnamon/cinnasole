@@ -5,10 +5,10 @@
       "destination": "/website",
       "permanent": false
     },
-    {
-      "source": "/github",
-      "destination": "https://github.com/opencinnamon/cinnasole",
-      "permanent": true
-    }
+{
+  "source": "/github/:path*",
+  "destination": "https://github.com/opencinnamon/cinnasole",
+  "permanent": true
+}
   ]
 }
