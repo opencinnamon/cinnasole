@@ -8,7 +8,7 @@
     {
       "source": "/github",
       "destination": "https://github.com/opencinnamon/cinnasole",
-      "permanent": false
+      "permanent": true
     }
   ]
 }
