@@ -1,6 +1,6 @@
 
 <p align="center">
-  <a href="https://console.mtgp.cc">
+  <a href="https://cinnasole.com/website">
   <img src="https://raw.githubusercontent.com/opencinnamon/cinnasole/refs/heads/main/images/cinnasole.gif" width="200" />
 </p>
 
@@ -62,7 +62,7 @@ You are welcome to create your own Windows port, but unofficial ports are not su
 
 To install Cinnasole on your Linux computer, visit:
 
-https://console.mtgp.cc/website/download
+https://cinnasole.com/website/download
 
 Download the latest version of Cinnasole, then follow the steps below.
 
