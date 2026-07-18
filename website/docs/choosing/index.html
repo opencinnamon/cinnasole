@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinnasole &mdash; Choosing how to install</title>
+  <link rel="stylesheet" href="/website/style.css">
+</head>
+<body>
+<div id="page">
+  <header>
+    <img src="/images/frame1.png" alt="Cinnasole" class="logo" id="logo-img">
+    <h1>Cinnasole</h1>
+  </header>
+  <nav>
+    <a href="/website/download" class="site-button">Download</a>
+    <a href="/website/about" class="site-button">About</a>
+    <a href="/website/" class="site-button">Home</a>
+    <a href="/github/" class="site-button">GitHub</a>
+  </nav>
+  <main>
+    <p class="lead">Choosing how to install &mdash; <a href="/website/docs">&larr; back to docs</a></p>
+    <div class="about-box">
+      <h2>Which one do I want?</h2>
+      <p>
+        The Download page gives you two buttons. Both get you a working
+        copy of Cinnasole &mdash; this is a recommendation, not a rule,
+        and either one is fine to pick.
+      </p>
+      <ul>
+        <li>
+          <strong>Download Cinnasole</strong> gets you <code>cinnasole.py</code>
+          on its own. This is the option most people want, especially the
+          first time &mdash; there's nothing else to set up, you just run
+          it directly with <code>python3</code>.
+        </li>
+        <li>
+          <strong>Download Install.sh</strong> gets you a setup script,
+          for people who'd rather have it handle a few steps for them. It
+          has one real requirement, covered below.
+        </li>
+      </ul>
+      <h2>If you download Install.sh</h2>
+      <p>
+        <code>install.sh</code> doesn't work by itself &mdash; it expects
+        <code>cinnasole.py</code> to already be sitting right next to it,
+        in the same folder, named exactly <code>cinnasole.py</code>. If
+        you only download <code>install.sh</code> and run it on its own,
+        it won't have anything to install.
+      </p>
+      <p>
+        So if you want to use it, grab both files from the
+        <a href="/website/download">Download page</a> and put them in the
+        same folder. Then, from inside that folder:
+      </p>
+      <pre><code>bash install.sh</code></pre>
+      <p>
+        That's it &mdash; run from the same folder as both files, with
+        <code>bash</code>, not <code>python3</code> (that part's for
+        <code>cinnasole.py</code> itself, once it's set up).
+      </p>
+      <h2>Just want the simplest path?</h2>
+      <p>
+        Download <code>cinnasole.py</code> on its own and run it directly.
+        No second file, no extra command &mdash; see the
+        <a href="/website/docs">docs</a> for the full walkthrough.
+      </p>
+    </div>
+  </main>
+  <footer>Cinnasole &mdash; built for Kitty &amp; Konsole</footer>
+</div>
+<script>
+  (function () {
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var logoSrc = "/images/frame1.png";
+    if (month === 6 && day >= 1 && day <= 29) {
+      logoSrc = "/images/framepride.png";
+    } else if (month === 7 && day === 4) {
+      logoSrc = "/images/frameamerica.png";
+    } else if (month === 7 && day === 11) {
+      logoSrc = "/images/framebirthday.png";
+    }
+    document.getElementById("logo-img").src = logoSrc;
+  })();
+</script>
+</body>
+</html>
