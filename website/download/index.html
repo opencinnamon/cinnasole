@@ -7,33 +7,27 @@
   <link rel="stylesheet" href="/website/style.css">
 </head>
 <body>
-
 <div id="page">
-
   <header>
     <img src="/images/frame1.png" alt="Cinnasole" class="logo">
     <h1>Cinnasole</h1>
   </header>
-
   <nav>
     <a href="/website/download" class="site-button">Download</a>
     <a href="/website/about" class="site-button">About</a>
     <a href="/website/" class="site-button">Home</a>
     <a href="/github/" class="site-button">GitHub</a>
   </nav>
-
   <main>
     <p class="lead">Click the white button to download Cinnasole for Linux.</p>
-
     <button type="button" class="site-button primary" id="download-btn">Download Cinnasole</button>
-
     <p id="download-confirmation">Great, now check the GitHub to see what to do next!</p>
+    <p class="lead">Click the white button below to download the install.sh script for Cinnasole</p>
+    <button type="button" class="site-button primary" id="download-install-btn">Download Installer</button>
+    <p id="download-install-confirmation">Great, now run bash install.sh to continue teh installer</p>
   </main>
-
   <footer>Cinnasole &mdash; built for Kitty &amp; Konsole</footer>
-
 </div>
-
   <script>
     document.getElementById('download-btn').addEventListener('click', function () {
       var link = document.createElement('a');
@@ -42,10 +36,17 @@
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
       document.getElementById('download-confirmation').style.display = 'block';
     });
+    document.getElementById('download-install-btn').addEventListener('click', function () {
+      var link = document.createElement('a');
+      link.href = 'https://cdn.cinnasole.com/files/install.sh';
+      link.download = 'install.sh';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      document.getElementById('download-install-confirmation').style.display = 'block';
+    });
   </script>
-
 </body>
 </html>
