@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinnasole &mdash; Donate</title>
+  <link rel="stylesheet" href="/website/style.css">
+</head>
+<body>
+<div id="page">
+  <header>
+    <img src="/images/frame1.png" alt="Cinnasole" class="logo" id="logo-img">
+    <h1>Cinnasole</h1>
+  </header>
+  <nav>
+    <a href="/website/download" class="site-button">Download</a>
+    <a href="/website/about" class="site-button">About</a>
+    <a href="/website/" class="site-button">Home</a>
+    <a href="https://github.com/opencinnamon/cinnasole" class="site-button">GitHub</a>
+  </nav>
+  <main>
+    <p class="lead">Ways to support the development of Cinnasole for Linux</p>
+    <div class="about-box">
+      <p>
+        Donating to the developer(s) of Cinnasole for Linux will help us
+        by a TON! And it would be awesome if you did donate. You also get
+        a role to show that you have supported us in the Discord server.
+      </p>
+      <ul>
+        <li><a href="https://ko-fi.com/kiirod">Ko-Fi</a></li>
+      </ul>
+    </div>
+  </main>
+  <footer>Cinnasole &mdash; built for Kitty &amp; Konsole</footer>
+</div>
+<script>
+  (function () {
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var logoSrc = "/images/frame1.png";
+    if (month === 6 && day >= 1 && day <= 29) {
+      logoSrc = "/images/framepride.png";
+    } else if (month === 7 && day === 4) {
+      logoSrc = "/images/frameamerica.png";
+    } else if (month === 7 && day === 11) {
+      logoSrc = "/images/framebirthday.png";
+    }
+    document.getElementById("logo-img").src = logoSrc;
+  })();
+</script>
+</body>
+</html>
